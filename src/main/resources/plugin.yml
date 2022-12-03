@@ -1,0 +1,16 @@
+name: HomesystemCommon
+version: '${project.version}'
+main: de.fynnhenck.homesystemcommon.HomesystemCommon
+api-version: 1.19
+load: POSTWORLD
+authors: [ testiyyy ]
+
+commands:
+  addhome:
+    description: Adds Home
+  delhome:
+    description: Deletes Home
+  home:
+    description: Teleports to home
+  homes:
+    description: Displays GUI of all Homes

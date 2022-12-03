@@ -1,0 +1,13 @@
+permission:
+  addHome: homesystem-common.addHome
+  deleteHome: homesystem-common.deleteHome
+  teleportHome: homesystem-common.teleportHome
+  listHome: homesystem-common.listHome
+message:
+  noPermission: Du hast keine Berechtigung, diesen Befehl auszuführen!
+  guiTeleport: Klicke hier, um dich zu teleportieren
+  guiDelete: Alle Homes löschen
+  deleteSingleConfirmation: Dein Home $home$ wurde gelöscht
+  deleteAllConformation: Deine Homes wurden gelöscht
+  guiTitle: Deine Homes
+  teleportSuccess: Du wurdest erfolgreich zu $home$ teleportiert!
