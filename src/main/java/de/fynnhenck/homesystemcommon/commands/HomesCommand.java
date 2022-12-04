@@ -43,13 +43,13 @@ public class HomesCommand implements CommandExecutor {
                 }
 
                 ItemStack placeholder = new ItemStack(Material.BLACK_STAINED_GLASS_PANE); //Trenner
-                for(int i = 45; i < 53; i++){
+                for(int i = 45; i < 54; i++){
                     inv.setItem(i, placeholder);
                 }
 
                 ItemStack delete = new ItemStack(Material.BARRIER); //all homes bdelete item
                 ItemMeta deleteMeta = delete.getItemMeta();
-                deleteMeta.setDisplayName(ChatColor.RED + "Alle Homes löschen");
+                deleteMeta.setDisplayName(ChatColor.RED + HomeMessages.GUI_DELETE);
                 delete.setItemMeta(deleteMeta);
                 inv.setItem(49, delete);
 

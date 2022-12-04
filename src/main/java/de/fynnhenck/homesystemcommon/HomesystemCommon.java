@@ -6,6 +6,7 @@ import de.fynnhenck.homesystemcommon.commands.DeleteHomeCommand;
 import de.fynnhenck.homesystemcommon.commands.HomeCommand;
 import de.fynnhenck.homesystemcommon.commands.HomesCommand;
 import de.fynnhenck.homesystemcommon.config.ConfigFile;
+import de.fynnhenck.homesystemcommon.events.InventoryClickListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -16,6 +17,7 @@ public final class HomesystemCommon extends JavaPlugin {
         ConfigFile config = new ConfigFile(this); //init config
 //        Bukkit.getPluginManager().getPlugin("").isEnabled();
         registerCommands();
+        registerEvents();
 
     }
 
@@ -31,5 +33,9 @@ public final class HomesystemCommon extends JavaPlugin {
         getCommand("delhome").setExecutor(new DeleteHomeCommand());
         getCommand("homes").setExecutor(new HomesCommand());
 
+    }
+
+    public void registerEvents(){
+        getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
     }
 }
