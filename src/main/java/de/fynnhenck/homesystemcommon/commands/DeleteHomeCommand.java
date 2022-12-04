@@ -10,32 +10,28 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-
-public class AddHomeCommand implements CommandExecutor {
+public class DeleteHomeCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
-        if(sender instanceof Player){ //Check if sender is Player
-            Player p = ((Player) sender).getPlayer(); //Cast Player to a local variable
-            if(p.hasPermission(HomePermissions.ADD_PERMISSION)){ //Permission check
-                //Check if args have right length
+        if(sender instanceof Player){
+            Player p = ((Player) sender).getPlayer();
+            if(p.hasPermission(HomePermissions.DELETE_PERMISSION)){
                 if(args.length == 1){
-                    //TODO: Regex home name
                     HomeSystemDatabase hsdb = new HomeSystemDatabase();
-                    if(hsdb.setHome(p, args[0])){
-                        p.sendMessage(ChatColor.GREEN + HomeMessages.SET_HOME.replace("$home$", args[0])); //Display message to youser; Replace variable with set home name
-                    }else{//Name duplicate
-                        p.sendMessage(ChatColor.RED + HomeMessages.HOME_DUPLICATE.replace("$home$", args[0]));
+                    if(hsdb.deleteHome(p.getUniqueId(), args[0])){
+                        p.sendMessage(ChatColor.GREEN + HomeMessages.DELETE_SINGLE.replace("$home$", args[0]));
+                    }else{
+                        p.sendMessage(ChatColor.RED + HomeMessages.NO_HOME_FOUND.replace("$hom$", args[0]));
                     }
                     return true;
-
                 }
-            }else{
+            }else{//No permission
                 p.sendMessage(ChatColor.RED + HomeMessages.NO_PERMISSION);
                 return true;
             }
 
-        }else{
+        }else{//sender != Player
             sender.sendMessage("Dieser Befehl muss von einem Spieler ausgeführt werden!");
         }
 

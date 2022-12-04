@@ -7,7 +7,10 @@ message:
   noPermission: Du hast keine Berechtigung, diesen Befehl auszuführen!
   guiTeleport: Klicke hier, um dich zu teleportieren
   guiDelete: Alle Homes löschen
+  setConfirmation: Dein Home $home$ wurde erfolgreich gespeichert!
   deleteSingleConfirmation: Dein Home $home$ wurde gelöscht
   deleteAllConformation: Deine Homes wurden gelöscht
   guiTitle: Deine Homes
   teleportSuccess: Du wurdest erfolgreich zu $home$ teleportiert!
+  nameDuplicate: Du besitzt bereits ein Home mit diesem Namen!
+  noHomeFound: Du besitzt kein Home mit dem namen $home$!

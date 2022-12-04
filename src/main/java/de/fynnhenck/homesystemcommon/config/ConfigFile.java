@@ -25,8 +25,11 @@ public class ConfigFile {
         String deleteAll = config.getString("message.deleteAllConformation");
         String guiTitle = config.getString("message.guiTitle");
         String teleportSuccess = config.getString("message.teleportSuccess");
+        String setHome = config.getString("message.setConfirmation");
+        String homeDub = config.getString("message.nameDuplicate");
+        String noHomeFound = config.getString("message.noHomeFound");
 
-        HomeMessages msg = new HomeMessages(noPermMessage, guiTeleport, guiDelete, deleteSingle, deleteAll, guiTitle, teleportSuccess);
+        HomeMessages msg = new HomeMessages(noPermMessage, guiTeleport, guiDelete, deleteSingle, deleteAll, guiTitle, teleportSuccess, setHome, homeDub, noHomeFound);
 
     }
 

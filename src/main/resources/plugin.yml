@@ -4,13 +4,18 @@ main: de.fynnhenck.homesystemcommon.HomesystemCommon
 api-version: 1.19
 load: POSTWORLD
 authors: [ testiyyy ]
+#Depend?
 
 commands:
-  addhome:
+  sethome:
+    usage: /sethome <name>
     description: Adds Home
   delhome:
+    usage: /delhome <name>
     description: Deletes Home
   home:
+    usage: /home <name>
     description: Teleports to home
   homes:
+    usage: /homes
     description: Displays GUI of all Homes
